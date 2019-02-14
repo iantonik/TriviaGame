@@ -1,0 +1,99 @@
+
+// var trivia = [
+// 	{
+// 		question: "Who was first U.S. president to be impeached?",
+// 		answers: {
+// 			a: 'abc',
+// 			b: 'Andrew Johnson',
+//             c: 'abc',
+// 		},
+// 		correctAnswer: 'Andrew Johnson'
+// 	},
+// 	{
+// 		question: "Who became both a vice president and president of the United States without ever being elected to either office?",
+// 		answers: {
+// 			a: 'abc',
+// 			b: 'abc',
+// 			c: 'Gerald Ford'
+// 		},
+// 		correctAnswer: 'Gerald Ford'
+//     },
+//     {
+//         question: "Who was the first female Prime Minister of a European country?",
+//         answers: {
+//             a: 'Margaret Thatcher',
+//             b: 'abc',
+//             c: 'abc',
+//         },
+//         correctAnswer: 'Margaret Thatcher'
+//     },
+//     {
+//         question: "The Bill of Rights contains how many of the first amendments to the United States Constitution?",
+//         answers: {
+//             a: '10',
+//             b: 'abc',
+//             c: 'abc',
+//         },
+//         correctAnswer: '10'
+//     },
+//     {
+//         question: "Who was the first U.S. president that was born a citizen of the United States?",
+//         answers: {
+//             a: 'abc',
+//             b: 'Martin Van Buren',
+//             c: 'abc',
+//         },
+//         correctAnswer: 'Martin Van Buren'
+//     },
+// ];
+
+var correctAns;
+var incorrectAns;
+var timeleft = 10;
+var userAnswer;
+
+
+// $(document).ready(function () {
+    
+//     var timer = setInterval(function () {
+//         document.getElementById("timer").innerHTML = `Time Remaining: ${timeleft}  Seconds`;
+//         timeleft -= 1;
+//         if (timeleft < 0) {
+//             clearInterval(timer);
+//             validateAnswer()
+//             document.getElementById("timer").innerHTML = "Time's up"
+//         }
+//     }, 1000);
+
+// })
+
+
+function setQuestion() {
+    trivia.forEach(element => {
+        $("#question").html(element.question);
+        element.answers.forEach(answer => {
+            $(`<p onclick="returnAnswer(this.id)" id="${answer}">${answer}</p>`).appendTo("#answers");
+            if(userAnswer === element.correctAnswer){
+                console.log("correct")
+            }else{
+                console.log("incorrect")
+            }
+
+        });
+
+    });
+}
+
+function returnAnswer(ansId){
+userAnswer = ansId;
+}
+
+
+
+
+
+
+// timer for each quesiton
+// answers chosen on click - like buttons with hoverover highlight.  
+// show correct answer before moving on to next question and users win/lost....timed 4 sec. 
+//if answered correctly, incorrectly, and time out stats at the end of the game 
