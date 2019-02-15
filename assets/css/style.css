@@ -2,7 +2,16 @@ div{
     margin: 20px;
 }
 
-.start{
-   
+#incorrect-answer{
+    display: none;
+}
+#correct-answer{
+    display: none;
+}
+#time-is-up{
+    display: none;
+}
 
+#game-over{
+    display: none;
 }
