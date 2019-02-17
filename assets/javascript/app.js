@@ -52,7 +52,7 @@ var sec = 10;
 var timer;
 var correct = 0;
 var incorrect = 0;
-var unanswered = 0;
+
 
 
 $(document).ready(function () {
@@ -62,7 +62,7 @@ $(document).ready(function () {
         loadQuestion();
     });
     $("#re-start").click(function () {
-        gameRestart();
+        restartGame();
         startTimer();
         loadQuestion();
     });
@@ -81,7 +81,6 @@ function tick() {
     if (sec < 0) {
         $("#answers").empty();
         $("#time-is-up").html(`<p> Time is up. <br> The answer is ${trivia[iterator].correctAnswer}.</p>`).show();
-        unanswered++;
         clearInterval(timer);
         setTimeout(nextQuestion, 2000);
     }
@@ -93,13 +92,11 @@ function startTimer() {
 }
 
 function validateAnswer(ansId) {
-    var userAnswer;
-    userAnswer = ansId;
     $("#answers").empty();
     clearInterval(timer);
     setTimeout(nextQuestion, 2000);
 
-    if (userAnswer === trivia[iterator].correctAnswer) {
+    if (ansId === trivia[iterator].correctAnswer) {
         $("#correct-answer").html(`<p> Correct Answer.</p>`).show();
         correct++
     }
@@ -116,7 +113,7 @@ function nextQuestion() {
     if (iterator >= trivia.length) {
         clearInterval(timer);
         $("#re-start").show();
-        $("#game-over").html(`<p>Game Over!</p><p>Correct Answers: ${correct}</p><p>Incorrect Answers: ${incorrect}</p><p>Unanswered: ${unanswered}</p>`).show();
+        $("#game-over").html(`<p>Game Over!</p><p>Correct Answers: ${correct}</p><p>Incorrect Answers: ${incorrect}</p><p>Unanswered: ${trivia.length - correct - incorrect}</p>`).show();
     }
     else {
         sec = 10;
@@ -131,16 +128,14 @@ function hideMessages() {
     $("#time-is-up").hide();
 }
 
-function gameRestart() {
+function restartGame() {
     iterator = 0;
     sec = 10;
     correct = 0;
     incorrect = 0;
-    unanswered = 0;
     $("#answers").empty();
     $("#re-start").hide();
     $("#game-over").hide();
-
 }
 
 
