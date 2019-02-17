@@ -1,5 +1,43 @@
+body{
+    background-image: url("../images/Questionmark.jpg");
+    background-position: 0 0;
+    background-size: cover;
+}
+.title{
+    display: block;
+    width: 100%;
+    background: #1839e4;
+    text-align: center;
+}
+h1{
+    font-family: 'Luckiest Guy', cursive;
+    color: #f64c72; 
+    vertical-align: middle;
+    margin-top: 20px;
+}
+.blur {
+    box-shadow:
+    0 0 0 10px hsl(0, 0%, 80%),
+    0 0 0 15px hsl(0, 0%, 90%);
+  }
+
+main{
+    padding-top: 20px;
+    background-color: #6dabd2a7;
+    box-shadow: 0 30px 40px rgba(0, 0, 0, 0.509);
+    height: 500px;
+}
+#timer{
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+}
+
 div{
     margin: 20px;
+}
+#re-start{
+    display:none;
 }
 
 #incorrect-answer{
@@ -14,4 +52,55 @@ div{
 
 #game-over{
     display: none;
+    position: absolute;
+    top: 300px;
+    right: 25%;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    border: 6px solid #F64C72;
+    background-color: #99738E;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+
 }
+
+#question{
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    margin-right: 30px;
+
+}
+.answer{
+    text-align: center;
+    font-size: x-large;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+.answer:hover{
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: #553d67;
+    border: 2px solid #99738E;
+    color: white;
+
+}
+.message{
+    display: none;
+    position: absolute;
+    top: 400px;
+    right: 25%;
+    width: 50%;
+    margin: auto;
+    padding: 50px;
+    border: 6px solid #F64C72;
+    background-color: #99738E;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+

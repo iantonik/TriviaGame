@@ -9,6 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/CSS/style.css">
@@ -22,47 +24,48 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-12 title">
+            <div class="title blur">
                 <h1>Totally Trivial Trivia!</h1>
             </div>
         </div>
-        <button class="start" id="start">Start Trivia Game</button>
+
+
+
+    </div>
+    <main class="container">
+        <button type="button" class="start btn-outline-primary btn-lg btn-block" id="start">Start Trivia Game</button>
+        <button type="button" class="re-start btn-outline-primary btn-lg btn-block" id="re-start">Play Trivia Game Again</button>
 
         <div class="row">
-            <div class="col-12" id="timer">
+            <div class="col-11" id="timer">
 
             </div>
         </div>
 
         <div class="row">
-            <div class="col-12" id="question">
+            <div class="col-11" id="question">
 
             </div>
         </div>
         <div class="row">
-            <div class="col-12" id="answers">
+            <div class="col-11" id="answers">
 
             </div>
         </div>
         <div class="row">
-            <div class="col-12" id="game-messages">
+            <div id="game-messages">
                 <div class="message" id="time-is-up"></div>
                 <div class="message" id="correct-answer"></div>
                 <div class="message" id="incorrect-answer"></div>
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
-                <div id="game-over"></div>
-            </div>
+            <div id="game-over"></div>
+
         </div>
 
-
-    </div>
+    </main>
 
 </body>
 
 </html>
-
-
-
